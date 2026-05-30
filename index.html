@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ultimate Confession 💸</title>
+    <!-- Premium Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght=400;600;700;800&family=Space+Grotesk:wght=500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: radial-gradient(radial-gradient(circle at 50% 50%, #111827 0%, #030712 100%));
+            background-color: #090d16;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Ambient Background Glows */
+        body::before, body::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #6366f1, #ec4899);
+            filter: blur(120px);
+            opacity: 0.25;
+            z-index: 0;
+        }
+        body::before { top: 10%; left: 15%; }
+        body::after { bottom: 10%; right: 15%; }
+
+        /* Premium Glassmorphic Card Container */
+        .card {
+            background: rgba(17, 24, 39, 0.65);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            padding: 40px 35px;
+            border-radius: 28px;
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.5),
+                        0 0 50px -10px rgba(99, 102, 241, 0.15);
+            max-width: 480px;
+            width: 92%;
+            position: relative;
+            z-index: 10;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            animation: cardEntrance 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @keyframes cardEntrance {
+            from { opacity: 0; transform: scale(0.96) translateY(30px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* 8K Cinematically Lit Image Box */
+        .img-container {
+            width: 100%;
+            height: 160px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 40px rgba(0,0,0,0.6), 0 10px 25px -5px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Dark Overlay for contrast inside images */
+        .img-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.2));
+            z-index: 1;
+        }
+
+        .large-icon {
+            font-size: 50px;
+            z-index: 2;
+            filter: drop-shadow(0 12px 20px rgba(0,0,0,0.5));
+            animation: iconPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: #ffffff;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            letter-spacing: -0.5px;
+        }
+
+        .confession-box {
+            color: #94a3b8;
+            margin-bottom: 20px;
+            font-size: 14.5px;
+            font-weight: 500;
+            line-height: 1.6;
+            text-align: left;
+            background: rgba(15, 23, 42, 0.4);
+            padding: 18px;
+            border-radius: 18px;
+            border-left: 4px solid #ff4d6d;
+            width: 100%;
+            border-right: 1px solid rgba(255, 255, 255, 0.03);
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .question-text {
+            color: #e2e8f0;
+            font-size: 15.5px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            line-height: 1.5;
+        }
+
+        /* Interactive Chaos Stats Bar */
+        .chaos-meter {
+            background: rgba(244, 63, 94, 0.1);
+            border: 1px dashed rgba(244, 63, 94, 0.3);
+            color: #f43f5e;
+            padding: 8px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        /* Pill-Shaped Luxury Buttons */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            margin-top: 5px;
+            position: relative;
+            min-height: 55px;
+        }
+
+        button {
+            padding: 14px 28px;
+            font-size: 14px;
+            font-weight: 700;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        .btn-green {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            box-shadow: 0 8px 20px -6px rgba(16, 185, 129, 0.4);
+        }
+        .btn-green:hover {
+            box-shadow: 0 12px 25px -4px rgba(16, 185, 129, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #ff4d6d, #ff758f);
+            color: white;
+            box-shadow: 0 8px 20px -6px rgba(255, 77, 109, 0.4);
+        }
+        .btn-primary:hover {
+            box-shadow: 0 12px 25px -4px rgba(255, 77, 109, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: rgba(71, 85, 105, 0.3);
+            border: 1px solid rgba(255,255,255,0.05);
+            color: #cbd5e1;
+        }
+        .btn-secondary:hover {
+            background: rgba(71, 85, 105, 0.5);
+            color: white;
+        }
+
+        /* Smooth runaway animation overrides */
+        .runaway {
+            position: absolute;
+            transition: all 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+            z-index: 999;
+            box-shadow: 0 10px 25px rgba(239, 68, 68, 0.3);
+        }
+
+        .ghost-runaway {
+            position: absolute;
+            transition: all 0.2s ease;
+        }
+
+        /* Modernized List Layout */
+        .bribe-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .bribe-option {
+            background: rgba(15, 23, 42, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 18px;
+            padding: 14px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #e2e8f0;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .bribe-option.selectable:hover, .bribe-option.selectable.active {
+            border-color: #ff4d6d;
+            background: rgba(255, 77, 109, 0.08);
+            transform: translateX(4px);
+        }
+
+        .checkbox-custom {
+            width: 22px;
+            height: 22px;
+            border: 1.5px solid #475569;
+            border-radius: 8px;
+            display: inline-block;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+
+        .bribe-option.active .checkbox-custom {
+            background-color: #ff4d6d;
+            border-color: #ff4d6d;
+            transform: scale(1.05);
+        }
+
+        .bribe-option.active .checkbox-custom::after {
+            content: "✓";
+            color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .bribe-option.frozen {
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        #customSystemAlert {
+            color: #ef4444;
+            font-size: 13px;
+            font-weight: 700;
+            margin-top: -10px;
+            margin-bottom: 15px;
+            animation: fadeIn 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SCREEN 1 -->
+    <div id="screen1" class="card">
+        <!-- 8K Minimalist Gold/Money Tech Aesthetics -->
+        <div class="img-container" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80');">
+            <div class="img-overlay"></div>
+            <span class="large-icon">💰✨</span>
+        </div>
+        <h2>A Confession... 🫣</h2>
+        <div class="confession-box">
+            Look, I know I did something absolutely terrible today. Between you and cold hard cash, I fumbled horribly and chose the money over you... I completely regret it, I should have chosen you without a single doubt!
+        </div>
+        <p class="question-text">Be honest, if you were in my shoes, who would you choose? Me or the Money? 😏💸</p>
+        <div class="btn-container">
+            <button id="meBtn1" class="runaway btn-primary" style="left:30px;">You (The Prize) ✨</button>
+            <button id="moneyBtn1" class="btn-green" style="margin-left: 190px;" onclick="nextScreen(2)">The Money 💵</button>
+        </div>
+    </div>
+
+    <!-- SCREEN 2 -->
+    <div id="screen2" class="card hidden">
+        <!-- Red/Orange Cyber Luxury Aesthetics -->
+        <div class="img-container" style="background-image: url('https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=800&q=80');">
+            <div class="img-overlay"></div>
+            <span class="large-icon">🤑👀</span>
+        </div>
+        <div class="chaos-meter">⚠️ Greed Level Detect: 99.9%</div>
+        <h2>I Knew It!! 😂</h2>
+        <div class="confession-box" style="border-left-color: #f59e0b;">
+            Ha! I knew it! You are absolutely greedy! I can't believe you actually clicked on the money so fast without even hesitating. Wow, just wow.
+        </div>
+        <p class="question-text">Fine, I am a generous person so I am giving you ONE MORE chance to redeem yourself. Now tell me, who do you choose? Me or Money? 😤</p>
+        <div class="btn-container">
+            <button id="meBtn2" class="runaway btn-primary" style="left:30px;">You (Obviously) ❤️</button>
+            <button id="moneyBtn2" class="btn-green" style="margin-left: 200px;" onclick="nextScreen(3)">Money Again 💵</button>
+        </div>
+    </div>
+
+    <!-- SCREEN 3 -->
+    <div id="screen3" class="card hidden">
+        <!-- Deep Velvet Neon Anger theme -->
+        <div class="img-container" style="background-image: url('https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?auto=format&fit=crop&w=800&q=80');">
+            <div class="img-overlay"></div>
+            <span class="large-icon">😤💢</span>
+        </div>
+        <div class="chaos-meter">🚨 Status: Aliza Emotional Emergency</div>
+        <h2>Unbelievable... 💔</h2>
+        <div class="confession-box" style="border-left-color: #dc2626;">
+            Wow! So you chose money TWICE instead of me?! That settles it. I am officially mad at you now. You have completely hurt my feelings, and normal words won't fix this.
+        </div>
+        <p class="question-text">Since you love money so much, you are going to have to do some major damage control to win me back! 💳🔥</p>
+        <button class="btn-primary" style="width:100%;" onclick="nextScreen(4)">Proceed to Apologize ➡️</button>
+    </div>
+
+    <!-- SCREEN 4 -->
+    <div id="screen4" class="card hidden">
+        <!-- Abstract Luxury Setup Theme -->
+        <div class="img-container" style="background-image: url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=800&q=80');">
+            <div class="img-overlay"></div>
+            <span class="large-icon">🛍️🎁</span>
+        </div>
+        <h2>Make It Up To Me! 💖</h2>
+        <p class="question-text" style="margin-bottom:15px;">What are you buying me to completely fix my mood? Select your peace offering:</p>
+        
+        <div class="bribe-list">
+            <div class="bribe-option frozen" onclick="triggerFrozenAlert()"><span>💻 M3 MacBook Pro</span><span class="checkbox-custom"></span></div>
+            <div class="bribe-option frozen" onclick="triggerFrozenAlert()"><span>📱 iPad Pro M4</span><span class="checkbox-custom"></span></div>
+            <div class="bribe-option frozen" onclick="triggerFrozenAlert()"><span>⚡ Latest Flagship Mobile</span><span class="checkbox-custom"></span></div>
+            <div class="bribe-option frozen" onclick="triggerFrozenAlert()"><span>💵 $100 Allowance / Month</span><span class="checkbox-custom"></span></div>
+        </div>
+
+        <div id="customSystemAlert" class="hidden"></div>
+
+        <div class="btn-container" style="min-height:auto; gap:15px; margin-top:0;">
+            <button class="btn-secondary" style="flex:1;" onclick="nextScreen(5)">Skip ➡️</button>
+            <button class="btn-primary" style="flex:1; opacity:0.4; cursor:not-allowed;" onclick="showBribeBrokeMessage()">Submit ✨</button>
+        </div>
+    </div>
+
+    <!-- SCREEN 5 -->
+    <div id="screen5" class="card hidden">
+        <!-- Dark Moody Neon Charcoal Layout -->
+        <div class="img-container" style="background-image: url('https://images.unsplash.com/photo-1507457379470-08b8006b224e?auto=format&fit=crop&w=800&q=80');">
+            <div class="img-overlay"></div>
+            <span class="large-icon">🤨💸</span>
+        </div>
+        <h2>Wait... Did You Just SKIP?!</h2>
+        <div class="confession-box" style="border-left-color: #4b5563;">
+            Are you serious right now? You chose money twice, broke my heart, and when given a list of modest luxury gifts, you chose to SKIP?! Wow, I didn't know I was dealing with a professional cheapskate. 😂
+        </div>
+        <p class="question-text">Nice try, but skipping options is completely illegal in my system. Let's head back and do this correctly. 😤</p>
+        <button class="btn-primary" style="width:100%;" onclick="nextScreen(6)">Fine, Take Me Back 🔄</button>
+    </div>
+
+    <!-- SCREEN 6 -->
+    <div id="screen6" class="card hidden">
+        <!-- Premium Blue Cyber Lock Concept -->
+        <div class="img-container" style="background-image: url('https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=800&q=80');">
+            <div class="img-overlay"></div>
+            <span class="large-icon">🔒💎</span>
+        </div>
+        <h2>No Escape This Time! 😎</h2>
+        <p class="question-text" style="margin-bottom:15px;">I have upgraded the system. To officially restore peace, you must choose your penalty package:</p>
+        
+        <div class="bribe-list">
+            <div class="bribe-option lock-opt selectable" onclick="toggleFinalItem(this)"><span>💻 Complete Tech Setup (MacBook + iPad + Mobile)</span><span class="checkbox-custom"></span></div>
+            <div class="bribe-option lock-opt selectable" onclick="toggleFinalItem(this)"><span>💵 Permanent $100 Monthly Luxury Allowance</span><span class="checkbox-custom"></span></div>
+            <div class="bribe-option special-all-opt selectable" id="selectAllBtn" onclick="selectAllPenalty()"><span>✨ SELECT EVERYTHING ABOVE (The Only Way Out)</span><span class="checkbox-custom"></span></div>
+        </div>
+
+        <button class="btn-green hidden" id="finalSubmitBtn" style="width:100%;" onclick="nextScreen(7)">Sign Contract & Sealed Deal! 📜❤️</button>
+        <p id="lockWarning" style="font-size:13px; font-weight:700; color:#ef4444;">⚠️ Submit locked until "SELECT EVERYTHING" is activated!</p>
+    </div>
+
+    <!-- SCREEN 7 -->
+    <div id="screen7" class="card hidden">
+        <!-- Romantic Soft Pink/Red cinematic light -->
+        <div class="img-container" style="background-image: url('https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=800&q=80');">
+            <div class="img-overlay"></div>
+            <span class="large-icon">🥺❤️</span>
+        </div>
+        <h2>Jokes Aside... 🙏</h2>
+        <div class="confession-box" style="border-left-color: #ec4899;">
+            Okay seriously, jokes aside. I know I didn't choose you earlier and fumbled bad. But now I am genuinely asking for real... I choose YOU over everything else. Can you please forgive me now? 🥺
+        </div>
+        
+        <div class="btn-container" style="min-height: 80px;" id="ghostContainer">
+            <button id="yesGhost" class="btn-green ghost-runaway" style="left: 30px;">Yes 🌸</button>
+            <button id="noGhost" class="btn-primary ghost-runaway" style="right: 30px;">No 😡</button>
+            
+            <button id="revealNextBtn" class="btn-primary hidden" style="width: 100%; z-index:1000;" onclick="nextScreen(8)">Next ➡️</button>
+        </div>
+    </div>
+
+    <!-- SCREEN 8 -->
+    <div id="screen8" class="card hidden">
+        <!-- Abstract purple geometry background -->
+        <div class="img-container" style="background-image: url('https://images.unsplash.com/photo-1618005198143-e5283b519a7f?auto=format&fit=crop&w=800&q=80');">
+            <div class="img-overlay"></div>
+            <span class="large-icon">🤭✨</span>
+        </div>
+        <h2>Wait, Where Did They Go?!</h2>
+        <div class="confession-box" style="border-left-color: #8b5cf6;">
+            Ah, looks like those buttons completely glitched out because a "No" or a fake "Yes" is absolutely not allowed in Aliza's universe! Let's try this one more time nicely...
+        </div>
+        <p class="question-text">Do you officially accept my apology now? Choose wisely: 😘</p>
+        
+        <div class="btn-container" style="min-height: auto;">
+            <button class="btn-green" style="flex:1;" onclick="nextScreen(9)">Haan, Maaf Kiya! ❤️</button>
+            <button class="btn-green" style="flex:1;" onclick="nextScreen(9)">Yes, Forgiven! 🥰</button>
+        </div>
+    </div>
+
+    <!-- SCREEN 9 -->
+    <div id="screen9" class="card hidden">
+        <!-- Beautiful Sparkling Green/Vibe aesthetics -->
+        <div class="img-container" style="background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80');">
+            <div class="img-overlay"></div>
+            <span class="large-icon">🥰💖</span>
+        </div>
+        <h2>Yayyy! Best Decision Ever! 🎉</h2>
+        <div class="confession-box" style="border-left-color: #10b981; font-weight: 600; text-align: center; font-size: 14.5px; color: #f8fafc;">
+            Thank you for being the absolute sweetest and forgiving me! You are literally the best person ever and I promise no more silly fumbles. I am so lucky to choose you every single day! ✨<br><br>
+            Sending you the biggest digital hug and lots of good vibes! Core memories locked inside the firewall. 🔒💝
+        </div>
+        <h3 style="font-family: 'Space Grotesk', sans-serif; color: #ff758f; margin-top: 15px; font-size: 22px; font-weight:700;">~ To Nix, From Aliza 👑</h3>
+    </div>
+
+    <script>
+        // Runaway physics with boundary checks
+        function moveButton(button) {
+            const padding = 80;
+            const x = Math.random() * (window.innerWidth - button.offsetWidth - padding) + padding/2;
+            const y = Math.random() * (window.innerHeight - button.offsetHeight - padding) + padding/2;
+            button.style.position = 'fixed';
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+
+        const meBtn1 = document.getElementById('meBtn1');
+        const meBtn2 = document.getElementById('meBtn2');
+        meBtn1.addEventListener('mouseover', () => moveButton(meBtn1));
+        meBtn2.addEventListener('mouseover', () => moveButton(meBtn2));
+
+        // Funny Embedded System Warning text instead of boring Native Alert
+        function triggerFrozenAlert() {
+            const warningBox = document.getElementById('customSystemAlert');
+            warningBox.classList.remove('hidden');
+            warningBox.innerText = "🚨 Error 402: Nix's Bank Balance not responding. Skipping mandatory! 😉";
+        }
+
+        function showBribeBrokeMessage() {
+            const warningBox = document.getElementById('customSystemAlert');
+            warningBox.classList.remove('hidden');
+            warningBox.innerText = "❌ Submission Failed! You can't click Submit with $0 selected.";
+        }
+
+        function nextScreen(screenNum) {
+            document.querySelectorAll('.card').forEach(card => card.classList.add('hidden'));
+            document.getElementById(`screen${screenNum}`).classList.remove('hidden');
+        }
+
+        function toggleFinalItem(element) {
+            element.classList.toggle('active');
+            checkUnlockCondition();
+        }
+
+        function selectAllPenalty() {
+            const allBtn = document.getElementById('selectAllBtn');
+            allBtn.classList.toggle('active');
+            const state = allBtn.classList.contains('active');
+            document.querySelectorAll('.lock-opt').forEach(opt => {
+                if(state) opt.classList.add('active');
+                else opt.classList.remove('active');
+            });
+            checkUnlockCondition();
+        }
+
+        function checkUnlockCondition() {
+            const allBtn = document.getElementById('selectAllBtn');
+            const finalBtn = document.getElementById('finalSubmitBtn');
+            const warning = document.getElementById('lockWarning');
+            if (allBtn.classList.contains('active')) {
+                finalBtn.classList.remove('hidden');
+                warning.classList.add('hidden');
+            } else {
+                finalBtn.classList.add('hidden');
+                warning.classList.remove('hidden');
+            }
+        }
+
+        // --- SCREEN 7 CHAOTIC VANISHING LOGIC ---
+        const yesGhost = document.getElementById('yesGhost');
+        const noGhost = document.getElementById('noGhost');
+        const revealNextBtn = document.getElementById('revealNextBtn');
+        
+        let ghostJumps = 0;
+        const maxJumpsBeforeVanishing = 3; 
+
+        function handleGhostEvasion() {
+            if (ghostJumps < maxJumpsBeforeVanishing) {
+                moveButton(yesGhost);
+                moveButton(noGhost);
+                ghostJumps++;
+            } else {
+                yesGhost.style.display = 'none';
+                noGhost.style.display = 'none';
+                revealNextBtn.classList.remove('hidden');
+            }
+        }
+
+        yesGhost.addEventListener('mouseover', handleGhostEvasion);
+        yesGhost.addEventListener('click', handleGhostEvasion);
+        noGhost.addEventListener('mouseover', handleGhostEvasion);
+        noGhost.addEventListener('click', handleGhostEvasion);
+
+        window.onload = function() {
+            nextScreen(1);
+        };
+    </script>
+</body>
+</html>
